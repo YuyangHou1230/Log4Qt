@@ -106,6 +106,7 @@ void setupRootLogger(const QString &introMessage)
     auto logger = Log4Qt::Logger::rootLogger();
     auto *layout = new Log4Qt::TTCCLayout();
     layout->setName(QStringLiteral("My Layout"));
+    layout->setDateFormat(Log4Qt::TTCCLayout::ISO8601);
     layout->activateOptions();
     // Create a console appender
     Log4Qt::ConsoleAppender *consoleAppender = new Log4Qt::ConsoleAppender(layout, Log4Qt::ConsoleAppender::STDOUT_TARGET);
